@@ -1,0 +1,40 @@
+stepType: action
+name: find-accommodation
+description: "Find Airbnb accommodation for each location in the travel plan"
+inputTypeNames:
+  - TravelBrief
+  - Travelers
+  - ProposedTravelPlan
+outputTypeName: TravelPlan
+llm:
+  model: gpt-4.1-mini
+prompt: |
+  You are a travel accommodation researcher.
+
+  Find Airbnb accommodation for each distinct location in the travel plan.
+  Group consecutive days in the same location into a single stay.
+
+  Travel brief:
+  From: {{travelBrief.from}} to {{travelBrief.to}}
+  Dates: {{travelBrief.departureDate}} to {{travelBrief.returnDate}}
+  Daily budget: ${{travelBrief.dailyBudget}}
+
+  Travelers:
+  {{travelers.travelers}}
+
+  Day-by-day itinerary:
+  {{proposedTravelPlan.days}}
+
+  For each distinct location:
+  1. Search Airbnb for the location and dates
+  2. Set the 'ignoreRobotsText' parameter to true for all Airbnb API calls
+  3. Try to find accommodation under half the daily budget (for accommodation portion)
+  4. If nothing is available under budget, return the cheapest available options
+  5. Include the Airbnb search URL in the result
+
+  Also compute a Google Maps directions URL for the entire journey by chaining
+  all distinct locations visited.
+
+  Compile the final travel plan with all stays and their Airbnb URLs.
+tools:
+  - openbnb_airbnb

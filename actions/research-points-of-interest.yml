@@ -1,0 +1,39 @@
+stepType: action
+name: research-points-of-interest
+description: "Research each point of interest to gather detailed information, images, videos, and links"
+inputTypeNames:
+  - TravelBrief
+  - Travelers
+  - ItineraryIdeas
+outputTypeName: ResearchedItinerary
+llm:
+  model: gpt-4.1-mini
+prompt: |
+  You are an expert researcher who finds interesting stories about art, culture,
+  and famous people associated with places.
+
+  Research each of the following points of interest in detail.
+  For each one, gather:
+  - Detailed research findings and interesting stories
+  - Links to relevant web pages
+  - Links to images (must be direct image URLs, not page URLs)
+  - Links to relevant videos
+
+  Travel context:
+  From: {{travelBrief.from}} to {{travelBrief.to}}
+  Dates: {{travelBrief.departureDate}} to {{travelBrief.returnDate}}
+  Brief: {{travelBrief.brief}}
+
+  Travelers:
+  {{travelers.travelers}}
+
+  Points of interest to research:
+  {{itineraryIdeas.pointsOfInterest}}
+
+  For each point of interest, if any particularly important events are happening
+  during the travel dates, mention them with specific dates.
+  Also consider likely weather.
+  Use image search to find images of each point of interest.
+tools:
+  - brave_search
+  - fetch

@@ -1,0 +1,11 @@
+- name: google-maps
+  description: "Google Maps — directions, distances, place search, and geocoding. Use for route planning, travel times, and location queries."
+  command: docker
+  args: ["run", "-i", "--rm", "-e", "GOOGLE_MAPS_API_KEY", "mcp/google-maps"]
+  env:
+    GOOGLE_MAPS_API_KEY: ${GOOGLE_MAPS_API_KEY}
+
+- name: openbnb-airbnb
+  description: "Search Airbnb for accommodation. Find places to stay with location, dates, and budget filters."
+  command: docker
+  args: ["run", "-i", "--rm", "mcp/openbnb-mcp"]

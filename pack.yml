@@ -1,0 +1,12 @@
+name: travel
+description: "Trip planning with Google Maps, Airbnb, and web research"
+version: 0.1.0
+author: Rod Johnson
+url: https://github.com/johnsonr/pack-travel
+tags:
+  - travel
+  - planning
+  - maps
+exports:
+  - plan-trip
+  - google_maps

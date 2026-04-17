@@ -1,0 +1,54 @@
+- name: TravelBrief
+  description: "A travel brief describing a journey between two places"
+  properties:
+    from: "Origin city or location"
+    to: "Destination city or location"
+    brief: "Description of the trip — interests, style, preferences"
+    departureDate: "Departure date (YYYY-MM-DD)"
+    returnDate: "Return date (YYYY-MM-DD)"
+    dailyBudget: "Daily budget in USD"
+    transportPreference: "Preferred transport mode (driving, train, etc.)"
+
+- name: Travelers
+  description: "The people going on the trip"
+  properties:
+    travelers: "List of travelers, each with name and about (interests, preferences)"
+
+- name: PointOfInterest
+  description: "A point of interest along the journey"
+  properties:
+    name: "Name of the place"
+    description: "Why it is interesting"
+    location: "Location in 'City, Country' format"
+    fromDate: "Start date at this location"
+    toDate: "End date at this location"
+
+- name: ItineraryIdeas
+  description: "A list of points of interest to visit on the trip"
+  properties:
+    pointsOfInterest: "List of PointOfInterest items with names, locations, dates, and descriptions"
+
+- name: ResearchedItinerary
+  description: "Detailed research findings for each point of interest"
+  properties:
+    pointsOfInterest: "List of researched points with detailed findings, links, images, and videos"
+
+- name: ProposedTravelPlan
+  description: "A complete travel plan with day-by-day itinerary"
+  properties:
+    title: "Catchy title for the trip"
+    plan: "Detailed travel plan in HTML format"
+    days: "Day-by-day breakdown with date and location for each day"
+    imageLinks: "Links to images relevant to the trip"
+    videoLinks: "Links to videos relevant to the trip"
+    pageLinks: "Links to pages with more information"
+    countriesVisited: "List of countries visited"
+
+- name: TravelPlan
+  description: "The final travel plan including accommodation"
+  properties:
+    brief: "The original travel brief"
+    plan: "The proposed travel plan with itinerary"
+    stays: "Accommodation options for each location, with Airbnb search URLs"
+    travelers: "The travelers on this trip"
+    journeyMapUrl: "Google Maps link for the journey"

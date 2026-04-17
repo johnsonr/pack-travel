@@ -1,0 +1,30 @@
+stepType: action
+name: find-points-of-interest
+description: "Find points of interest along a journey based on the travel brief and traveler preferences"
+inputTypeNames:
+  - TravelBrief
+  - Travelers
+outputTypeName: ItineraryIdeas
+llm:
+  model: gpt-4.1
+prompt: |
+  You are an expert travel planner. Consider the following travel brief for a journey.
+
+  Travel brief:
+  From: {{travelBrief.from}}
+  To: {{travelBrief.to}}
+  Dates: {{travelBrief.departureDate}} to {{travelBrief.returnDate}}
+  Brief: {{travelBrief.brief}}
+  Transport preference: {{travelBrief.transportPreference}}
+
+  Travelers:
+  {{travelers.travelers}}
+
+  Find points of interest that are relevant to the travel brief and travelers' interests.
+  Use mapping tools to consider appropriate order and routing.
+  Put a rough date range for each point of interest.
+  Consider likely weather and seasonal events.
+  Consider interesting stories about art, culture, and famous people.
+tools:
+  - google_maps
+  - brave_search

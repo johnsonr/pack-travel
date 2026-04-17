@@ -1,0 +1,5 @@
+stepType: goal
+name: plan-trip
+description: "Create a detailed travel plan with points of interest, research, day-by-day itinerary, and accommodation"
+outputTypeName: TravelPlan
+export: true
