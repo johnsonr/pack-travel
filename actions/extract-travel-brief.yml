@@ -2,7 +2,7 @@ stepType: action
 name: extract-travel-brief
 description: "Extract structured travel details from a user's natural language request"
 inputTypeNames:
-  - UserInput
+  - com.embabel.agent.domain.io.UserInput
 outputTypeName: TravelBrief
 llm:
   model: gpt-4.1-mini

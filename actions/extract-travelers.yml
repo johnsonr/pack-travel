@@ -2,7 +2,7 @@ stepType: action
 name: extract-travelers
 description: "Extract traveler information from the user's request, or create default travelers"
 inputTypeNames:
-  - UserInput
+  - com.embabel.agent.domain.io.UserInput
 outputTypeName: Travelers
 llm:
   model: gpt-4.1-mini
