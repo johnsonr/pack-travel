@@ -33,7 +33,9 @@ prompt: |
   For each point of interest, if any particularly important events are happening
   during the travel dates, mention them with specific dates.
   Also consider likely weather.
-  Use image search to find images of each point of interest.
+  Use web search to find images of each point of interest.
+  Call brave_search first (with no arguments) to reveal the available search tools,
+  then use them.
 tools:
   - brave_search
   - fetch

@@ -55,6 +55,9 @@ prompt: |
 
   Research findings:
   {{researchedItinerary.pointsOfInterest}}
+
+  Call google_maps and brave_search first (with no arguments) to reveal the
+  available inner tools, then use them.
 tools:
   - google_maps
   - brave_search
