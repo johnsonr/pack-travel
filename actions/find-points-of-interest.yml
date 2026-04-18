@@ -25,8 +25,9 @@ prompt: |
   Put a rough date range for each point of interest.
   Consider likely weather and seasonal events.
   Consider interesting stories about art, culture, and famous people.
-  Call google_maps and brave_search first (with no arguments) to reveal the
-  available inner tools, then use them.
+  IMPORTANT: To use google_maps or brave_search, you MUST first call each with
+  empty arguments {} to reveal the inner tools. Only THEN call the revealed tools.
+  Do NOT batch the unfold call with other calls — unfold FIRST, then use.
 tools:
   - google_maps
   - brave_search

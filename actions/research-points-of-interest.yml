@@ -34,8 +34,10 @@ prompt: |
   during the travel dates, mention them with specific dates.
   Also consider likely weather.
   Use web search to find images of each point of interest.
-  Call brave_search first (with no arguments) to reveal the available search tools,
-  then use them.
+  IMPORTANT: To use brave_search, you MUST first call it with empty arguments {}
+  to reveal the inner tools. Only THEN call the revealed tools (brave_web_search,
+  brave_local_search). Do NOT call brave_search with search arguments directly.
+  Do NOT batch the unfold call with search calls — unfold FIRST, then search.
 tools:
   - brave_search
   - fetch

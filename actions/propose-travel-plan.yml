@@ -56,8 +56,9 @@ prompt: |
   Research findings:
   {{researchedItinerary.pointsOfInterest}}
 
-  Call google_maps and brave_search first (with no arguments) to reveal the
-  available inner tools, then use them.
+  IMPORTANT: To use google_maps or brave_search, you MUST first call each with
+  empty arguments {} to reveal the inner tools. Only THEN call the revealed tools.
+  Do NOT batch the unfold call with other calls — unfold FIRST, then use.
 tools:
   - google_maps
   - brave_search
