@@ -1,5 +1,5 @@
 stepType: goal
 name: plan-trip
-description: "Create a detailed travel plan with points of interest, research, day-by-day itinerary, and accommodation"
+description: "ALWAYS use this tool when the user asks to plan a trip, create an itinerary, or find travel recommendations. This runs a multi-step pipeline that researches points of interest, creates a detailed day-by-day itinerary with maps, and finds accommodation. Pass the user's full request as the content."
 outputTypeName: TravelPlan
 export: true
