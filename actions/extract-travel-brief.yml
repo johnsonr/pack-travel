@@ -1,0 +1,21 @@
+stepType: action
+name: extract-travel-brief
+description: "Extract structured travel details from a user's natural language request"
+inputTypeNames:
+  - UserInput
+outputTypeName: TravelBrief
+llm:
+  model: gpt-4.1-mini
+prompt: |
+  Extract the travel details from the user's request.
+
+  User request: {{userInput.content}}
+
+  Extract:
+  - from: the origin city/location
+  - to: the destination city/location
+  - brief: a summary of what the user wants (interests, style, preferences)
+  - departureDate: departure date (use tomorrow if not specified, format YYYY-MM-DD)
+  - returnDate: return date (calculate from number of days if given, format YYYY-MM-DD)
+  - dailyBudget: daily budget in USD (default 200 if not specified)
+  - transportPreference: how they want to travel (default "driving" if not specified)

@@ -1,0 +1,19 @@
+stepType: action
+name: extract-travelers
+description: "Extract traveler information from the user's request, or create default travelers"
+inputTypeNames:
+  - UserInput
+outputTypeName: Travelers
+llm:
+  model: gpt-4.1-mini
+prompt: |
+  Extract traveler information from the user's request.
+
+  User request: {{userInput.content}}
+
+  If the user mentions specific people, their names, or their interests, include them.
+  If no traveler details are given, create a single default traveler:
+  - name: "Traveler"
+  - about: "General interest traveler who enjoys culture, food, and sightseeing"
+
+  Return a list of travelers, each with a name and about field describing their interests.
