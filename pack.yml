@@ -1,6 +1,13 @@
 name: travel
-description: "Trip planning with Google Maps, Airbnb, and web research"
-version: 0.1.0
+description: |
+  Trip planning with Google Maps, Airbnb, and web research.
+
+  REQUIRES the `research` pack to be installed for the `brave` web-search
+  tool (https://github.com/johnsonr/pack-research). Brave is used by the
+  research-points-of-interest action and as a gap-filler in find-points-
+  of-interest and propose-travel-plan. Without it those actions still run
+  but lose web-search capability.
+version: 0.3.0
 author: Rod Johnson
 url: https://github.com/johnsonr/pack-travel
 tags:
@@ -9,4 +16,4 @@ tags:
   - maps
 exports:
   - plan-trip
-  - google-maps
+  - google_maps

@@ -1,0 +1,48 @@
+# Google Maps Platform — Geocoding, Directions, Distance Matrix, Places,
+# Timezone. Vendored OpenAPI 3 spec from googlemaps/openapi-specification
+# (release v1.22.3) — vendored (not URL-fetched) because (a) network fetch
+# at startup is a footgun and (b) the spec is stable.
+#
+# Auth: API key in the `key` query parameter (the spec declares
+# `ApiKeyAuth` as `apiKey in: query name: key`, so the framework's
+# OpenApiLearner injects it automatically). The key is resolved from
+# the `GOOGLE_MAPS_API_KEY` env var (set in the deployment's
+# `application.yml` or systemd unit), NOT from a per-user OAuth flow —
+# Maps is billed against a single Google Cloud project, not per user.
+#
+# Migration note: this pack used to ship Maps as the upstream
+# `mcp/google-maps` Docker MCP server. Migrated to OpenAPI on
+# 2026-05-07 to (a) drop the Docker dependency, (b) give the LLM full
+# request/response types instead of MCP's flat tool descriptions, and
+# (c) align with pack-google's typed-OpenAPI direction.
+#
+# Tool naming: `name: google_maps` matches the identifier the action
+# prompts already reference (`tools: [google_maps]` etc.), so action
+# files don't need to change.
+#
+# Multi-host servers: the spec uses operation-level `servers:` overrides
+# because Maps spans `maps.googleapis.com`, `roads.googleapis.com`, and
+# `www.googleapis.com`. Requires the framework's OpenApiLearner to honor
+# operation > path > spec precedence per OpenAPI 3 (added 2026-05-07).
+#
+# Curation: ~10 ops cover travel-planning needs. Skipped: Roads
+# (snapToRoads/nearestRoads — driving-data-collection use case, not
+# trip planning), geolocate (client-side cell/wifi positioning),
+# streetView/placePhoto (binary image responses), elevation (rarely
+# useful for itineraries), autocomplete/queryAutocomplete (interactive
+# UX, not server-side planning).
+
+- url: google-maps-platform-openapi3.json
+  name: google_maps
+  type: openapi
+  auth: api-key
+  token-env: GOOGLE_MAPS_API_KEY
+  operation-ids:
+    - geocode
+    - directions
+    - distanceMatrix
+    - timezone
+    - placeDetails
+    - findPlaceFromText
+    - nearbySearch
+    - textSearch

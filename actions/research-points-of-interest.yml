@@ -33,11 +33,8 @@ prompt: |
   For each point of interest, if any particularly important events are happening
   during the travel dates, mention them with specific dates.
   Also consider likely weather.
-  Use web search to find images of each point of interest.
-  IMPORTANT: To use brave_search, you MUST first call it with empty arguments {}
-  to reveal the inner tools. Only THEN call the revealed tools (brave_web_search,
-  brave_local_search). Do NOT call brave_search with search arguments directly.
-  Do NOT batch the unfold call with search calls — unfold FIRST, then search.
+  Use the brave web search tool to find images, articles, and videos for each
+  point of interest, then use fetch to follow up on the most promising URLs.
 tools:
-  - brave_search
+  - brave
   - fetch
