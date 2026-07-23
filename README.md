@@ -1,4 +1,4 @@
-# pack-travel
+# realm-travel
 
 Trip planning — Google Maps via OpenAPI, Airbnb via MCP, optional Brave web
 research. Bundles a `plan-trip` goal and the chained actions
@@ -42,11 +42,11 @@ Skipped from the full spec: Roads (snapToRoads / nearestRoads — driving
 data collection, not trip planning), Geolocation, Street View, place
 photos, elevation, autocomplete.
 
-## Optional: research pack for web search
+## Optional: research realm for web search
 
 Several actions use the `brave` web search tool to fill gaps the typed
 Maps surface doesn't cover (e.g. "what's worth seeing near X", recent
-reviews, opening hours). Install [pack-research](https://github.com/johnsonr/pack-research) to enable it. Without it the actions still run but lose
+reviews, opening hours). Install [realm-research](https://github.com/johnsonr/realm-research) to enable it. Without it the actions still run but lose
 web-search capability.
 
 ## Airbnb (still MCP)
