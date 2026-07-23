@@ -9,7 +9,7 @@ description: |
   but lose web-search capability.
 version: 0.3.0
 author: Rod Johnson
-url: https://github.com/johnsonr/pack-travel
+url: https://github.com/johnsonr/realm-travel
 tags:
   - travel
   - planning
